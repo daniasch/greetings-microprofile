@@ -19,18 +19,45 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 public class Message implements Serializable {
 	private static final long serialVersionUID = 2120914098830910225L;
 
-	@JsonProperty("name")
-	private String name;
+	@JsonProperty("id") 
+	private int id; 
+	
+	@JsonProperty("first-name")
+	private String firstName;
 
+	@JsonProperty("last-name")
+	private String lastName;
+	
 	@JsonProperty("message")
 	private String message;
 
+
+	
+	@JsonProperty("name")
+	private String name;
+	
 	public String getName() {
 		return name;
 	}
 
 	public void setName(String name) {
 		this.name = name;
+	}
+	
+	public String getFirstName() {
+		return firstName;
+	}
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+	
+	public String getLastName() {
+		return firstName;
+	}
+
+	public void setLastName(String firstName) {
+		this.firstName = firstName;
 	}
 
 	public String getMessage() {
@@ -39,6 +66,14 @@ public class Message implements Serializable {
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+	
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(Message.class);
@@ -53,3 +88,4 @@ public class Message implements Serializable {
 		return "Marhsaling error";
 	}
 }
+
